@@ -6,10 +6,14 @@
   <title>Sadia Ahmed | Portfolio</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
+
+  <!-- NAVBAR -->
   <header>
     <nav class="navbar">
       <h1 class="logo">Sadia Ahmed</h1>
+
       <ul class="nav-links">
         <li><a href="index.html" class="active">About</a></li>
         <li><a href="academic.html">Academic</a></li>
@@ -19,54 +23,136 @@
     </nav>
   </header>
 
+  <!-- HERO / ABOUT -->
   <main>
+
     <section class="hero">
       <div class="hero-text">
-        <p class="intro">Hello, I’m</p>
+        <p>Hello, I’m</p>
         <h2>Sadia Ahmed</h2>
-        <p class="subtitle">Designer • UX/UI • Interactive Media</p>
+        <p class="subtitle">UX/UI Designer • Interactive Media</p>
+
         <p class="description">
-          I am a New Media Interactive Development student who enjoys creating
-          thoughtful digital experiences. My work focuses on design, usability,
-          and communication through academic projects, personal explorations,
-          and professional experience.
+          I am a New Media Interactive Development student focused on creating
+          clean, user-centered digital experiences. My work blends design,
+          usability, and development across academic, personal, and professional projects.
         </p>
 
         <div class="button-group">
-          <a href="academic.html" class="button">View Academic Work</a>
-          <a href="personal.html" class="button secondary">View Personal Work</a>
-          <a href="professional.html" class="button secondary">View Professional Work</a>
+          <a href="academic.html" class="button">Academic Work</a>
+          <a href="personal.html" class="button secondary">Personal Work</a>
+          <a href="professional.html" class="button secondary">Professional Work</a>
         </div>
       </div>
 
       <div class="hero-image">
-        <img src="images/profile-placeholder.jpg" alt="Portrait of Sadia Ahmed" />
+        <img src="images/profile-placeholder.jpg" alt="Profile Image" />
       </div>
     </section>
 
+    <!-- CAROUSEL -->
+    <section class="carousel">
+      <div class="carousel-track" id="carouselTrack">
+
+        <div class="carousel-item">
+          <h3>Travel Planning App</h3>
+          <p>UX/UI design focused on simplifying trip organization and planning.</p>
+        </div>
+
+        <div class="carousel-item">
+          <h3>Audio Visualizer</h3>
+          <p>Interactive visualization reacting to music using canvas and WebAudio.</p>
+        </div>
+
+        <div class="carousel-item">
+          <h3>TypeScript Project</h3>
+          <p>Refactored JavaScript into structured, scalable TypeScript.</p>
+        </div>
+
+      </div>
+
+      <div class="carousel-buttons">
+        <button onclick="moveSlide(-1)">‹</button>
+        <button onclick="moveSlide(1)">›</button>
+      </div>
+    </section>
+
+    <!-- WIDGETS -->
+    <section class="widgets">
+      <h3>Quick Overview</h3>
+
+      <div class="widget-grid">
+
+        <div class="widget">
+          <h4>Skills</h4>
+          <p>UX/UI, HTML, CSS, JavaScript, TypeScript</p>
+        </div>
+
+        <div class="widget">
+          <h4>Focus</h4>
+          <p>User-centered design & interactive experiences</p>
+        </div>
+
+        <div class="widget">
+          <h4>Experience</h4>
+          <p>Leadership, teamwork, campus involvement</p>
+        </div>
+
+        <div class="widget">
+          <h4>Tools</h4>
+          <p>Figma, VS Code, GitHub</p>
+        </div>
+
+      </div>
+    </section>
+
+    <!-- QUICK LINKS -->
     <section class="quick-links">
       <h3>Explore My Work</h3>
+
       <div class="card-grid">
+
         <a href="academic.html" class="card">
           <h4>Academic Work</h4>
-          <p>Course projects, design assignments, and development work from school.</p>
+          <p>Projects and coursework from my studies.</p>
         </a>
 
         <a href="personal.html" class="card">
           <h4>Personal Work</h4>
-          <p>Creative projects, experiments, and ideas I built outside of class.</p>
+          <p>Creative and experimental projects outside class.</p>
         </a>
 
         <a href="professional.html" class="card">
           <h4>Professional Work</h4>
-          <p>Experience, internships, campus roles, and work that reflects my growth.</p>
+          <p>Experience, leadership, and real-world work.</p>
         </a>
+
       </div>
     </section>
+
   </main>
 
+  <!-- FOOTER -->
   <footer>
-    <p>© 2026 Sadia Ahmed. All rights reserved.</p>
+    <p>© 2026 Sadia Ahmed</p>
   </footer>
+
+  <!-- CAROUSEL SCRIPT -->
+  <script>
+    let currentIndex = 0;
+
+    function moveSlide(direction) {
+      const track = document.getElementById("carouselTrack");
+      const slides = document.querySelectorAll(".carousel-item");
+
+      currentIndex += direction;
+
+      if (currentIndex < 0) currentIndex = slides.length - 1;
+      if (currentIndex >= slides.length) currentIndex = 0;
+
+      track.style.transform = `translateX(-${currentIndex * 100}%)`;
+    }
+  </script>
+
 </body>
 </html>
